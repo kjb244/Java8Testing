@@ -1,8 +1,18 @@
 package com.spring.model;
 
+
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
+
+
 public class Customer {
 	
+	@Pattern(message="bad first name", regexp="^[A-z]+$")
+	@Length(message="min length", min=4)
 	private String firstName;
+	
 	private String lastName;
 	private int age;
 	
